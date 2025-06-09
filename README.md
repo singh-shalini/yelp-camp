@@ -21,18 +21,18 @@ YelpCamp is a full-stack web application where users can browse, create, review,
 
 
 
-## 🚀 Getting Started
+%## 🚀 Getting Started
 
-Clone the repository and install dependencies:
-```bash
-git clone https://github.com/yourusername/yelpcamp.git
-cd yelpcamp
-npm install
-```
-Then start the app:
-```bash
-node app.js
-```
+%Clone the repository and install dependencies:
+%```bash
+%git clone https://github.com/yourusername/yelpcamp.git
+%cd yelpcamp
+%npm install
+%```
+%Then start the app:
+%```bash
+%node app.js
+%```
 
 ## 📃 License
 This project is licensed under the MIT License.
