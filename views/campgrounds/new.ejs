@@ -1,0 +1,109 @@
+<% layout('layout/boilerplate') %>
+
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+</div>
+<div class="col-6 offset-3">
+  <div class="card shadow">
+    <div class="card-body">
+      <form
+        action="/campgrounds"
+        method="POST"
+        novalidate
+        class="validated-form"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            name="campground[title]"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            class="form-control"
+            type="text"
+            id="location"
+            name="campground[location]"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Campground Price</label>
+          <div class="input-group">
+            <span class="input-group-text" id="price-label">$</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="0.00"
+              aria-label="Price"
+              aria-describedby="price-label"
+              name="campground[price]"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            type="text"
+            id="description"
+            name="campground[description]"
+            required
+          ></textarea>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-4">
+          <label for="formFile" class="form-label"></label>
+          <input
+            class="form-control"
+            type="file"
+            name="image"
+            id="formFile"
+            multiple
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <button class="btn btn-success">Add Campground</button>
+      </form>
+      <div class="mt-3">
+        <a href="/campgrounds">All Campgrounds</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (() => {
+    "use strict";
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".validated-form");
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
